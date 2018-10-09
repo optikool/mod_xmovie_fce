@@ -1,0 +1,39 @@
+.xmovie-fce-horizontal {}
+
+.xmovie-fce-horizontal .image-item-first {}
+
+.xmovie-fce-horizontal .image-item-last {}
+
+.xmovie-fce-horizontal .image-item {
+	background: none repeat scroll 0 0 transparent;
+    float: left;
+    margin: 0;
+}
+
+.xmovie-fce-horizontal ul {
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style-type: none !important;
+}
+
+.xmovie-fce-horizontal .image-item img {
+	width: 100px;
+}
+
+.xmovie-fce-horizontal .image-item .image-name {
+	font-weight: bold;
+}
+
+.xmovie-fce-horizontal .image-item .image-image {
+	text-align: center;
+}
+
+.xmovie-fce-horizontal .image-item .image-quicktake {}
+
+.xmovie-fce-horizontal .image-item .image-date {
+	text-align: center;
+}
+
+.xmovie-fce-horizontal .image-item .hits {
+	text-align: center;
+}
