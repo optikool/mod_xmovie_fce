@@ -29,7 +29,7 @@ if($items_count > 0) {
 				
 	if($currRow == 1) {
 	?>
-	<div class="row-fluid <?php echo $span;?> <?php echo $params->get('moduleclass_sfx'); ?>">
+	<div class="row-fluid xmovie-fce <?php echo $span;?> <?php echo $params->get('moduleclass_sfx'); ?>">
 	<?php
 	}
 ?>
@@ -61,17 +61,27 @@ if($items_count > 0) {
 		<?php } ?>
 		<?php if($params->get('show_date')) {?>
 		<div class="image-date">
-			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_DATE'); ?></strong> <?php echo JHTML::Date($item->creation_date, 'm-d-Y'); ?>
+			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_DATE'); ?>:</strong> <?php echo JHTML::Date($item->creation_date, 'm-d-Y'); ?>
 		</div>
 		<?php } ?>
 		<?php if($params->get('show_hits')) {?>
 		<div class="image-hits">
-			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_HITS'); ?></strong> <?php echo $item->hits; ?>
+			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_HITS'); ?>:</strong> <?php echo $item->hits; ?>
 		</div>
 		<?php } ?>
 		<?php if($params->get('show_submitter')) {?>
 		<div class="image-submitter">
-			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_SUBMITTER'); ?></strong> <?php echo $item->submitter; ?>
+			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_SUBMITTER'); ?>:</strong> <?php echo $item->submitter; ?>
+		</div>
+		<?php } ?>
+		<?php if($params->get('show_tags')) {?>
+		<div class="image-tags">
+			<?php
+			$item->tags = new JHelperTags;
+			$item->tags->getItemTags('com_xmovie.movie' , $item->id);
+			$item->tagLayout = new JLayoutFile('joomla.content.tags');
+			?>
+			<strong><?php echo JTEXT::_('MOD_XMOVIE_FCE_TAGS'); ?>:</strong> <?php echo $item->tagLayout->render($item->tags->itemTags); ?>
 		</div>
 		<?php } ?>
 		<?php if($params->get('show_quicktake')) {?>
